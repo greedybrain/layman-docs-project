@@ -11,5 +11,5 @@ Rails.application.routes.draw do
       registrations: 'registrations'
     }
 
-  root to: "home#index"
+  root to: "laymen#home"
 end
