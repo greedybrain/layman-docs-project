@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-     respond_to :json
 
      private 
 
