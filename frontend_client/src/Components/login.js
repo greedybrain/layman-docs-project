@@ -26,6 +26,7 @@ class Login {
                fetch(adapter.loginPath, options)
                     .then(res => res.json())
                     .then(data => {
+                         debugger
                          localStorage.setItem("laymanId", data.layman.data.id)
                          localStorage.setItem("token", data.jwt)
                     })

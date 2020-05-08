@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+body {
+     font-family: 'Raleway', sans-serif;
+}
+
+div.app-container {
+
+     div.login-form {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #20257a;
+
+          form {
+               margin-bottom: 50px;
+               width: 350px;
+               padding: 85px 50px;
+               border-top-left-radius: 100px;
+               border-bottom-right-radius: 100px;
+               background-color: #f4f4f4;
+
+               h1 {
+                    text-align: center;
+                    margin-bottom: 20px;
+                    color: #414141;
+               }
+
+               div.email,
+               div.remember-me-cb {
+                    margin-bottom: 20px;
+               }
+
+               div.password {
+                    margin-bottom: 25px;
+               }
+
+               div.email,
+               div.password {
+                    height: 40px;
+                    border-bottom: 1px solid #717171;
+
+                    input {
+                         border: 0;
+                         height: 100%;
+                         width: 100%;
+                         padding-left: 10px;
+                         font-size: 1rem;
+                         outline: none;
+                         background-color: #f4f4f4;
+                    }
+               }
+
+               div.remember-me-cb {
+                    label {
+                         font-size: .9rem;
+                    }
+                    input[type=checkbox] {
+                         vertical-align: middle;
+                    }
+               }
+
+               button {
+                    width: 100%;
+                    height: 40px;
+                    border-radius: 3px;
+                    font-size: 1rem;
+                    background-image: linear-gradient(to right, #262b85, #20257a);
+                    border: 0;
+                    color: #fff;
+                    letter-spacing: 2px;
+                    // outline: none;
+                    cursor: pointer;
+               }
+
+               p {
+                    text-align: center;
+                    margin-top: 20px;
+                    color: #414141;
+
+                    span {
+                         text-decoration: underline;
+                         color: #20257a;
+                         cursor: pointer;
+                    }
+               }
+
+          }
+     }
+
+     div.signup-form {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          background-color: #20257a;
+
+          form {
+               margin-bottom: 50px;
+               width: 350px;
+               padding: 85px 50px;
+               border-top-left-radius: 100px;
+               border-bottom-right-radius: 100px;
+               background-color: #f4f4f4;
+
+               h1 {
+                    text-align: center;
+                    margin-bottom: 20px;
+                    color: #414141;
+               }
+
+               div.name,
+               div.email,
+               div.remember-me-cb {
+                    margin-bottom: 20px;
+               }
+
+               div.password {
+                    margin-bottom: 25px;
+               }
+
+               div.name,
+               div.email,
+               div.password {
+                    height: 40px;
+                    border-bottom: 1px solid #717171;
+
+                    input {
+                         border: 0;
+                         height: 100%;
+                         width: 100%;
+                         padding-left: 10px;
+                         font-size: 1rem;
+                         outline: none;
+                         background-color: #f4f4f4;
+                    }
+               }
+
+               div.remember-me-cb {
+                    label {
+                         font-size: .9rem;
+                    }
+
+                    input[type=checkbox] {
+                         vertical-align: middle;
+                    }
+               }
+
+               button {
+                    width: 100%;
+                    height: 40px;
+                    border-radius: 3px;
+                    font-size: 1rem;
+                    background-image: linear-gradient(to right, #262b85, #20257a);
+                    border: 0;
+                    color: #fff;
+                    letter-spacing: 2px;
+                    // outline: none;
+                    cursor: pointer;
+               }
+
+               p {
+                    text-align: center;
+                    margin-top: 20px;
+                    color: #414141;
+
+                    span {
+                         text-decoration: underline;
+                         color: #20257a;
+                         cursor: pointer;
+                    }
+               }
+
+          }
+     }
+
+}

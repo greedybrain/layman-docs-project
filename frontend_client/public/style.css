@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+div.app-container div.login-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #20257a;
+}
+
+div.app-container div.login-form form {
+  margin-bottom: 50px;
+  width: 350px;
+  padding: 85px 50px;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  background-color: #f4f4f4;
+}
+
+div.app-container div.login-form form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #414141;
+}
+
+div.app-container div.login-form form div.email,
+div.app-container div.login-form form div.remember-me-cb {
+  margin-bottom: 20px;
+}
+
+div.app-container div.login-form form div.password {
+  margin-bottom: 25px;
+}
+
+div.app-container div.login-form form div.email,
+div.app-container div.login-form form div.password {
+  height: 40px;
+  border-bottom: 1px solid #717171;
+}
+
+div.app-container div.login-form form div.email input,
+div.app-container div.login-form form div.password input {
+  border: 0;
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #f4f4f4;
+}
+
+div.app-container div.login-form form div.remember-me-cb label {
+  font-size: .9rem;
+}
+
+div.app-container div.login-form form div.remember-me-cb input[type=checkbox] {
+  vertical-align: middle;
+}
+
+div.app-container div.login-form form button {
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  font-size: 1rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#262b85), to(#20257a));
+  background-image: linear-gradient(to right, #262b85, #20257a);
+  border: 0;
+  color: #fff;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+div.app-container div.login-form form p {
+  text-align: center;
+  margin-top: 20px;
+  color: #414141;
+}
+
+div.app-container div.login-form form p span {
+  text-decoration: underline;
+  color: #20257a;
+  cursor: pointer;
+}
+
+div.app-container div.signup-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #20257a;
+}
+
+div.app-container div.signup-form form {
+  margin-bottom: 50px;
+  width: 350px;
+  padding: 85px 50px;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  background-color: #f4f4f4;
+}
+
+div.app-container div.signup-form form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #414141;
+}
+
+div.app-container div.signup-form form div.name,
+div.app-container div.signup-form form div.email,
+div.app-container div.signup-form form div.remember-me-cb {
+  margin-bottom: 20px;
+}
+
+div.app-container div.signup-form form div.password {
+  margin-bottom: 25px;
+}
+
+div.app-container div.signup-form form div.name,
+div.app-container div.signup-form form div.email,
+div.app-container div.signup-form form div.password {
+  height: 40px;
+  border-bottom: 1px solid #717171;
+}
+
+div.app-container div.signup-form form div.name input,
+div.app-container div.signup-form form div.email input,
+div.app-container div.signup-form form div.password input {
+  border: 0;
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #f4f4f4;
+}
+
+div.app-container div.signup-form form div.remember-me-cb label {
+  font-size: .9rem;
+}
+
+div.app-container div.signup-form form div.remember-me-cb input[type=checkbox] {
+  vertical-align: middle;
+}
+
+div.app-container div.signup-form form button {
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  font-size: 1rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#262b85), to(#20257a));
+  background-image: linear-gradient(to right, #262b85, #20257a);
+  border: 0;
+  color: #fff;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+div.app-container div.signup-form form p {
+  text-align: center;
+  margin-top: 20px;
+  color: #414141;
+}
+
+div.app-container div.signup-form form p span {
+  text-decoration: underline;
+  color: #20257a;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
