@@ -3,7 +3,17 @@ class SessionsController < ApplicationController
      def create 
           layman = Layman.find_by(email: params[:email])
           if layman&.authenticate(params[:password])
-               render json: LaymanSerializer.new(layman).serialized_json
+               payload = { layman_id: layman.id }
+               token = encode_token(payload)
+               render json: {
+                    layman: LaymanSerializer.new(layman).serializable_hash,
+                    jwt: token,
+                    message: "Welcome back, #{layman.name}"
+               }
+          else
+               render json: {
+                    failure: "Log in failed! Email or Password invalid!"
+               }
           end
      end
 
