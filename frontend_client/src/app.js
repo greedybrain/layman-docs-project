@@ -1,7 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-     const layman = new Login()
-     layman.newLaymanSession()
+     const laymanReg = new Signup()
+     laymanReg.newLaymanRegistration()
+     const laymanSession = new Login()
+     laymanSession.newLaymanSession()
 
+
+
+
+
+
+
+
+
+
+     // LOGIN/SIGNUP STUFF 
      let loginForm = document.querySelector("div.login-form")
      let signupForm = document.querySelector("div.signup-form")
      let openSignup = document.querySelector("span.open-signup")
