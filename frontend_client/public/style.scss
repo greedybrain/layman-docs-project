@@ -30,6 +30,7 @@ div.app-container {
                border-top-left-radius: 100px;
                border-bottom-right-radius: 100px;
                background-color: #f4f4f4;
+               position: relative;
 
                h1 {
                     text-align: center;
@@ -88,6 +89,7 @@ div.app-container {
                     text-align: center;
                     margin-top: 20px;
                     color: #414141;
+                    font-size: .8rem;
 
                     span {
                          text-decoration: underline;
@@ -95,6 +97,13 @@ div.app-container {
                          cursor: pointer;
                     }
                }
+
+                p.login-copyright-info {
+                     position: absolute;
+                     bottom: 0;
+                     margin: 0 0 20px 35px;
+                     color: #5c5c5c;
+                }
 
           }
      }
@@ -111,6 +120,7 @@ div.app-container {
           background-color: #20257a;
 
           form {
+               position: relative;
                margin-bottom: 50px;
                width: 350px;
                padding: 85px 50px;
@@ -178,12 +188,20 @@ div.app-container {
                     text-align: center;
                     margin-top: 20px;
                     color: #414141;
+                    font-size: .8rem;
 
                     span {
                          text-decoration: underline;
                          color: #20257a;
                          cursor: pointer;
                     }
+               }
+
+               p.signup-copyright-info {
+                    position: absolute;
+                    bottom: 0;
+                    margin: 0 0 20px 35px;
+                    color: #5c5c5c;
                }
 
           }
