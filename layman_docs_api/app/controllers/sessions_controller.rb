@@ -28,4 +28,8 @@ class SessionsController < ApplicationController
           end
      end
 
+     # def destroy 
+     #      layman.
+     # end
+
 end
