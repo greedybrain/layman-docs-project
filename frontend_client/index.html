@@ -6,7 +6,33 @@
      <title>Layman Docs</title>
 </head>
 <body>
-     Hello
+     <header>
+          <div class="heading">
+               <h1>Layman Docs</h1>
+          </div>
+          <div class="login-signup">
+               <ul>
+                    <li class="signup"></li>
+                    <li class="login"></li>
+               </ul>
+          </div>
+     </header>
+
+     <div class="app-container">
+
+          <div class="login-form">
+               <form id="login-form">
+                    <div class="email">
+                         <input type="email" name="email" class="email-field" placeholder="Email" required>
+                    </div>
+                    <div class="password">
+                         <input type="password" name="password" class="pw-field" placeholder="Password" required>
+                    </div>
+                    <button type="submit">Login</button>
+               </form>
+          </div>
+
+     </div>
 
      <script src="./src/Adapters/sessions_adapter.js"></script>
      <script src="./src/Components/login.js"></script>

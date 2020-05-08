@@ -1,3 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-     const adapter = new SessionsAdapter
+     const layman = new Login()
+     layman.newLaymanSession()
 })
