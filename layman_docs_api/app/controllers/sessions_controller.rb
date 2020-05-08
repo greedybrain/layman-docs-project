@@ -17,4 +17,14 @@ class SessionsController < ApplicationController
           end
      end
 
+     def auto_login
+          if session_layman
+               render json: LaymanSerializer.new(session_layman).serializable_hash
+          else
+               render json: {
+                    errors: "No Layman Logged In"
+               }
+          end
+     end
+
 end
