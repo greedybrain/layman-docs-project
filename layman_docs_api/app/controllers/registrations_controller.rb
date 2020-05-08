@@ -1,4 +1,5 @@
 class RegistrationsController < ApplicationController
+     before_action :require_login, except: [:create]
 
      def create 
           layman = Layman.new(layman_params)
@@ -19,7 +20,7 @@ class RegistrationsController < ApplicationController
      private 
 
      def layman_params 
-          params.require(:layman).permit(:name, :email, :password)
+          params.permit(:name, :email, :password)
      end
 
 end
