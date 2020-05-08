@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
+     
      // LOGIN/SIGNUP STUFF 
      let loginForm = document.querySelector("div.login-form")
      let signupForm = document.querySelector("div.signup-form")

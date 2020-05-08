@@ -3,7 +3,9 @@ class RegistrationsController < ApplicationController
 
      def create 
           layman = Layman.new(layman_params)
-          if layman.save 
+          
+          
+          if layman.save!
                payload = { layman_id: layman.id }
                token = encode_token(payload)
                render json: {
@@ -20,7 +22,7 @@ class RegistrationsController < ApplicationController
      private 
 
      def layman_params 
-          params.permit(:name, :email, :password)
+          params.permit(:registration, :name, :email, :password)
      end
 
 end

@@ -1,6 +1,6 @@
 class Login {
      constructor() {
-          this.form = document.querySelector("#login-form")
+          this.loginForm = document.querySelector("#login-form")
           this.email = document.querySelector("input[name=email]")
           this.password = document.querySelector("input[name=password]")
      }
@@ -9,7 +9,7 @@ class Login {
 
           const adapter = new SessionsAdapter()
 
-          this.form.addEventListener("submit", e => {
+          this.loginForm.addEventListener("submit", e => {
                e.preventDefault()
 
                let options = {
@@ -19,17 +19,19 @@ class Login {
                          "Accept": "application/json"
                     },
                     body: JSON.stringify({
-                         email: this.email.value,
-                         password: this.password.value
+                         email: e.target.email.value,
+                         password: e.target.password.value
                     })
                }
+
                fetch(adapter.loginPath, options)
                     .then(res => res.json())
                     .then(data => {
                          localStorage.setItem("laymanId", data.layman.data.id)
                          localStorage.setItem("token", data.jwt)
+                         this.loginForm.reset()
                     })
-               this.form.reset()
+               
           })
 
      }

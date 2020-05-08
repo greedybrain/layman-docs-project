@@ -1,7 +1,7 @@
 class Signup {
      constructor() {
-          this.form = document.querySelector("#signup-form")
-          this.name = document.querySelector("input[name=name]")
+          this.signupForm = document.querySelector("#signup-form")
+          this.name = document.querySelector("input[name=full_name]")
           this.email = document.querySelector("input[name=email]")
           this.password = document.querySelector("input[name=password]")
      }
@@ -9,8 +9,9 @@ class Signup {
 
           const adapter = new RegistrationsAdapter()
 
-          this.form.addEventListener("submit", e => {
+          this.signupForm.addEventListener("submit", e => {
                e.preventDefault()
+               // debugger
 
                let options = {
                     method: "POST",
@@ -19,18 +20,21 @@ class Signup {
                          "Accept": "application/json"
                     },
                     body: JSON.stringify({
-                         name: this.name.value,
-                         email: this.email.value,
-                         password: this.password.value
+                         name: e.target.full_name.value,
+                         email: e.target.email.value,
+                         password: e.target.password.value
                     })
                }
+               
                fetch(adapter.signupPath, options)
                     .then(res => res.json())
                     .then(data => {
+                         console.log(data)
                          localStorage.setItem("laymanId", data.layman.data.id)
                          localStorage.setItem("token", data.jwt)
+                         this.signupForm.reset()
                     })
-               this.form.reset()
+               
           })
 
      }
