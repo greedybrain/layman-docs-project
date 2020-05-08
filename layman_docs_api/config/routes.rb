@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
+  post "/signup", to: "registrations#create"
 
-  resources :laymen
-  post 'layman_token' => 'layman_token#create'
+  root "laymen#index"
 end
