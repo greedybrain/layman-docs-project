@@ -14,7 +14,7 @@ class ApplicationController < ActionController::API
                token = auth_header.split(' ')[1]
                begin
                     JWT.decode(token, ENV['JWT_TOKEN_SECRET'], true, { algorithm: ENV['JWT_ALGORITHM']})
-               rescue => JWT::DecodeError
+               rescue JWT::DecodeError
                     []
                end
           end 
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::API
 
      def session_layman
           decoded_hash = decoded_token 
-          if !decoded_hash.empty?
+          if !decoded_hash.nil?
                layman_id = decoded_hash[0]['layman_id']
                @layman = Layman.find_by(id: layman_id)
           else
