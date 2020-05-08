@@ -4,11 +4,11 @@ class SessionAdapter {
           this.autoLoginPath = "http://localhost:3000/login"
      }
 
-     getUser() {
-          return fetch(this.loginPath).then(res => res.json())
-     }
+}
+SessionAdapter.prototype.getUser = function() {
+     return fetch(this.loginPath).then(res => res.json())
+}
 
-     autoLoginUser() {
-          return fetch(this.autoLoginPath).then(res => res.json())
-     }
+SessionAdapter.prototype.autoLoginUser = function() {
+     return fetch(this.autoLoginPath).then(res => res.json())
 }
