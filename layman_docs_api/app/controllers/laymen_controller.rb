@@ -8,4 +8,9 @@ class LaymenController < ApplicationController
           }
      end
 
+     def show 
+          layman = Layman.find(params[:id])
+          render json: LaymanSerializer.new(layman).serializable_hash
+     end
+
 end

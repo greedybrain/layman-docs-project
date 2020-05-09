@@ -22,7 +22,7 @@ class RegistrationsController < ApplicationController
      private 
 
      def layman_params 
-          params.permit(:registration, :name, :email, :password)
+          params.permit(:name, :email, :password)
      end
 
 end
