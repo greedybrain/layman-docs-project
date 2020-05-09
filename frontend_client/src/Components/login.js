@@ -31,9 +31,9 @@ class Login {
                          localStorage.setItem("laymanId", data.layman.data.id)
                          localStorage.setItem("token", data.jwt)
                          flash.renderLoginSuccess()
-                         setTimeout(() => {
-                              flash.renderLoginSuccess().remove()
-                         }, 1500)
+                         // setTimeout(() => {
+                         //      flash.renderLoginSuccess().remove()
+                         // }, 1500)
                          setTimeout(() => {
                               this.loginForm.reset()
                          }, 2500)
