@@ -8,12 +8,10 @@ class RegistrationsAdapter {
      }
 
      createLaymanRegistration() {
-          let options = {
+          const configs = new Header()
+          const options = {
                method: "POST",
-               headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-               },
+               headers: configs.defaultHeaders,
                body: JSON.stringify({
                     name: e.target.full_name.value,
                     email: e.target.email.value,

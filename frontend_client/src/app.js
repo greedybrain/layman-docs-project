@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
      document.querySelector("#login-form").addEventListener("submit", e => {
           e.preventDefault()
 
-          SessionsAdapter.createLaymanSession(e)
+          const adapter = new SessionsAdapter()
+          adapter.createLaymanSession(e)
      })
      
 })
