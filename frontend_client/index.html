@@ -4,24 +4,33 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Layman Docs</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
      <link rel="stylesheet" href="./public/style.css">
 </head>
 <body>
      <header>
           <div class="heading">
-               <h1>Layman Docs</h1>
+               <h1>LaymanDocs</h1>
           </div>
-          <div class="login-signup">
+          <div class="login-signup-logout">
                <ul>
-                    <li class="signup"></li>
-                    <li class="login"></li>
+                    <li class="signup">Signup</li>
+                    <li class="login">Login</li>
                </ul>
           </div>
      </header>
 
      <div class="app-container">
 
-          <div class="login-form">
+          <div class="topic-container">
+               <div class="tc-heading">
+                    <h2>Doc Picks</h2>
+               </div>
+
+          </div>
+
+          <!-- LOGIN AND SIGNUP FORM HIDDEN ON LOAD -->
+          <!-- <div class="login-form">
                <form id="login-form">
                     <h1>Welcome Back</h1>
                     <div class="email">
@@ -38,7 +47,7 @@
                     <p>Don't have an account? <span class="open-signup">Signup</span></p>
                     <p class="login-copyright-info">&copy 2020. LaymanDocs</p>
                </form>
-          </div>
+          </div> -->
 
           <div class="signup-form">
                <form id="signup-form">
@@ -66,10 +75,10 @@
      <script src="./src/Adapters/auth_adapter.js"></script>
      <script src="./src/Adapters/sessions_adapter.js"></script>
      <script src="./src/Adapters/registrations_adapter.js"></script>
-     <script src="./src/Components/signup.js"></script>
      <script src="./src/Adapters/laymen_adapter.js"></script>
      <script src="./src/Components/login.js"></script>
-     <script src="./src/Components/layman.js"></script>
+     <!-- <script src="./src/Views/login_form.js"></script> -->
+     <script src="./src/Views/login_form.js"></script>
      <script src="./src/Views/flash_messages.js"></script>
      <script src="./src/app.js"></script>
 </body>

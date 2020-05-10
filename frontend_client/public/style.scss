@@ -6,8 +6,22 @@
      box-sizing: border-box;
 }
 
+a {
+     text-decoration: none;
+}
+
+li {
+     list-style-type: none;
+}
+
+::-webkit-scrollbar {
+     display: none;
+}
+
 body {
      font-family: 'Raleway', sans-serif;
+     background-color: #f4f4f4;
+     margin: 20px;
 }
 
 // FLASH MESSAGES 
@@ -31,7 +45,84 @@ body {
      letter-spacing: 2px;
 }
 
+.danger {
+     border: 1px solid #c9412c;
+     background-color: #c9412c;
+     color: #fff;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 100;
+     width: 100%;
+     margin: 0 auto;
+     text-align: center;
+     height: 50px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 1.2rem;
+     letter-spacing: 2px;
+}
+
+header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 15px 40px;
+     height: 10vh;
+     border-radius: 10px;
+     color: #fff;
+     background-image: linear-gradient(to right, #262b85, #20257a);
+     -webkit-box-shadow: 0px 10px 19px -2px rgba(0, 0, 0, 0.59);
+     -moz-box-shadow: 0px 10px 19px -2px rgba(0, 0, 0, 0.59);
+     box-shadow: 0px 10px 19px -2px rgba(0, 0, 0, 0.59);
+     min-width: 900px;
+     max-width: 1200px;
+
+
+     div.login-signup-logout {
+          ul {
+               display: flex;
+
+               li {
+                    cursor: pointer;
+                    font-size: 1.2rem;
+                    letter-spacing: 2px;
+               }
+
+               li:nth-child(2) {
+                    margin-left: 15px;
+               }
+          }
+     }
+}
+
 div.app-container {
+     // margin: 5px;
+
+     div.topic-container {
+          width: 225px;
+          height: 75vh;
+          margin-top: 40px;
+          border-radius: 10px;
+          overflow-y: scroll;
+          -webkit-box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+          -moz-box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+          box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+
+          .tc-heading {
+               // border-bottom: 1px solid #333;
+               padding: 15px 0;
+               background-image: linear-gradient(to right, #262b85, #20257a);
+               border-top-left-radius: 9px;
+               border-top-right-radius: 9px;
+
+               h2 {
+                    text-align: center;
+                    color: #fff;
+               }
+          }
+     }
 
      div.login-form {
           position: absolute;
@@ -39,10 +130,10 @@ div.app-container {
           left: 0;
           width: 100%;
           height: 100vh;
-          display: flex;
+          display: flex; //before flex
           align-items: center;
           justify-content: center;
-          background-color: #20257a;
+          background-color: #32323285;
 
           form {
                margin-bottom: 50px;
@@ -138,7 +229,7 @@ div.app-container {
           display: none;
           align-items: center;
           justify-content: center;
-          background-color: #20257a;
+          background-color: #32323285;
 
           form {
                position: relative;
