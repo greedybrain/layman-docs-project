@@ -7,15 +7,18 @@ class SessionsAdapter {
           this.password = document.querySelector("input[name=password]")
      }
 
-     createLaymanSession() {
-          fetch(adapter.loginPath, this.configObj(e))
+     static createLaymanSession(e) {
+          const config = new Header()
+          fetch(this.loginPath, config.sessionPostConfigs(e.target.email.value, e.target.password.value))
                .then(res => res.json())
                .then(data => {
+                    console.log(data)
+                    localStorage.setItem("token", data.jwt)
                     this.successLoginRes(data)
                })
      }
 
-     destroyLaymanSession() {
+     static destroyLaymanSession() {
           localStorage.clear()
      }
 
