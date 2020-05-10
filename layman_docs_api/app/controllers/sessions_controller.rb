@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-     before_action :require_login, except: [:create]
+     before_action :require_login, except: [:create, :destroy]
 
      def create 
           layman = Layman.find_by(email: params[:email])
@@ -28,8 +28,9 @@ class SessionsController < ApplicationController
           end
      end
 
-     # def destroy 
-     #      layman.
-     # end
+     def destroy 
+          binding.pry
+          
+     end
 
 end
