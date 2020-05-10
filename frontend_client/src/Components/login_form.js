@@ -1,7 +1,7 @@
 class LoginForm {
      constructor() {
           this.appContainer = document.querySelector("div.app-container")
-          this.loginForm = document.createElement("div")
+          this.loginFormCont = document.createElement("div")
           this.form = document.createElement("form")
           this.headingH1 = document.createElement('h1')
           this.emailDiv = document.createElement("div")
@@ -13,13 +13,13 @@ class LoginForm {
           this.rememberMeInput = document.createElement("input")
           this.loginBtn = document.createElement('button')
           this.pTag = document.createElement("p")
-          this.spanTag = document.createElement("span")
+          this.span = document.createElement("span")
           this.lastPTag = document.createElement("p")
      }
 }
 
-LoginForm.prototype.renderLoginForm = function () {
-     this.loginForm.classList.add("login-form")
+LoginForm.prototype.buildLoginForm = function () {
+     this.loginFormCont.classList.add("login-form")
      this.form.id = "login-form"
      this.headingH1.textContent = "Welcome Back"
      // EMAIL DEALINGS 
@@ -53,10 +53,10 @@ LoginForm.prototype.renderLoginForm = function () {
      this.loginBtn.type = "submit"
      // P TAG DEALINGS 
      this.pTag.textContent = "Don't have an account? "
-     // SPAN TAG DEALINGS 
-     this.spanTag.textContent = "Signup"
-     this.spanTag.classList.add("open-signup")
-     this.pTag.appendChild(this.spanTag)
+     // a TAG DEALINGS 
+     this.span.textContent = "Signup"
+     this.span.classList.add("open-signup")
+     this.pTag.appendChild(this.span)
      // LAST P TAG DEALINGS 
      this.lastPTag.textContent = "© 2020. LaymanDocs"
      this.lastPTag.classList.add("login-copyright-info")
@@ -73,8 +73,8 @@ LoginForm.prototype.renderLoginForm = function () {
      )
 
      // ADD FORM TO FORM CONTAINER 
-     this.loginForm.appendChild(this.form)
-     this.appContainer.insertBefore(this.loginForm, this.appContainer.children[1])
+     this.loginFormCont.appendChild(this.form)
+     this.appContainer.appendChild(this.loginFormCont)
 
-     return this.loginForm
+     return this.form
 }
