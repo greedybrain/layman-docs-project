@@ -4,14 +4,28 @@ class FlashMessages {
           this.flashMessageCont = document.createElement("div")
      }
      
-     renderLoginSuccess() {
+     renderLoginFlashResponse() {
           const token = localStorage.token
+          const flashDiv = this.flashMessageCont
           if (token) {
-               const successDiv = this.flashMessageCont
-               successDiv.textContent = "Login Successful!"
-               successDiv.classList.add('success', 'animate__animated', 'animate__swing', 'animate__delay-2s')
-               this.appContainer.appendChild(successDiv)
-               return successDiv
+               flashDiv.textContent = "Login Successful!";
+               flashDiv.classList.add(
+                 "success",
+                 "animate__animated",
+                 "animate__slideInDown",
+                 "animate__faster"
+               );
+               this.appContainer.appendChild(flashDiv);
+          } else {
+               flashDiv.textContent = "Invalid email or password!"
+               flashDiv.classList.add(
+                 "danger",
+                 "animate__animated",
+                 "animate__slideInDown",
+                 "animate__faster"
+               );
+               this.appContainer.appendChild(flashDiv);
           }
+          return flashDiv;
      }
 }
