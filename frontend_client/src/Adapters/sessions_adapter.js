@@ -21,9 +21,10 @@ class SessionsAdapter {
           return fetch("http://localhost:3000/login", options)
                .then(res => res.json())
                .then(laymen => {
-                    console.log(laymen)
                     localStorage.setItem("token", laymen.jwt)
-                    localStorage.setItem("currentLayman", laymen.layman.data)
+                    localStorage.setItem("laymanId", laymen.layman.data.id)
+                    localStorage.setItem("laymanEmail", laymen.layman.data.attributes.email)
+                    localStorage.setItem("laymanName", laymen.layman.data.attributes.name)
                })
                .catch(err => console.log(err.message))
      }

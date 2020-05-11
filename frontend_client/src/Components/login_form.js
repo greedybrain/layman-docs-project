@@ -44,7 +44,7 @@ LoginForm.prototype.buildLoginForm = function () {
      this.rememberMeLabel.style = "word-wrap:break-word"
      this.rememberMeInput.type = "checkbox"
      this.rememberMeInput.name = "remember-me"
-     this.rememberMeLabel.textContent = "Remember me"
+     this.rememberMeLabel.textContent = " Remember me"
      this.rememberMeLabel.prepend(this.rememberMeInput)
      this.rememberMeDiv.append(this.rememberMeLabel)
      // BUTTON DEALINGS 

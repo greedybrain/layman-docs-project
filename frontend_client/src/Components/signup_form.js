@@ -73,6 +73,7 @@ SignupForm.prototype.buildSignupForm = function () {
      // ADD FORM TO FORM CONTAINER 
      this.signupFormCont.appendChild(this.form)
      this.appContainer.append(this.signupFormCont)
+     
      return this.form
 }
 

@@ -1,7 +1,9 @@
 class App {
      static start() {
-          AppEvent.headerLoginSignupClick()
-          
+          // LAYMAN EITHER LOGS IN OR SIGNS UP - STEP 1
+          AppEventSessionReg.openSignup()
+          AppEventSessionReg.openLogin()
+          //===========================================
      }
 }
 

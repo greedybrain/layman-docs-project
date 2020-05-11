@@ -1,9 +1,12 @@
 class LoginPage {
 
      static renderLoginForm() {
-          if (!AuthCheckUser.isloggedIn()) {
+
+          if (AuthCheckUser.isloggedIn()) {
+               document.querySelector(".login").remove()
+          } else {
                const form = new LoginForm().buildLoginForm()
-               AppEvent.formSubmit(form)
+               return form.parentElement
           }
      }
 
