@@ -21,7 +21,9 @@ li {
 body {
      font-family: 'Raleway', sans-serif;
      background-color: #f4f4f4;
-     margin: 20px;
+     margin: 20px auto;
+     padding: 0 20px;
+     max-width: 1200px;
 }
 
 // FLASH MESSAGES 
@@ -81,18 +83,46 @@ header {
      min-width: 900px;
      max-width: 1200px;
 
-
-     div.login-signup-logout {
+     div.header-options {
           ul {
                display: flex;
+               align-items: center;
 
                li {
                     font-size: 1.2rem;
                     letter-spacing: 2px;
                     cursor: pointer;
+                    color: #fff;
                }
 
+               li:nth-child(1) {
+                    height: 40px;
+                    width: 400px;
+                    border-radius: 8px;
+                    -webkit-box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+                    -moz-box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+                    box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+
+                    input {
+                         border: 0;
+                         height: 100%;
+                         width: 100%;
+                         font-size: 1rem;
+                         border-radius: 4px;
+                         padding: 0 10px;
+                         outline: none;
+                    }
+               }
+               
                li:nth-child(2) {
+                    margin-left: 15px;
+               }    
+
+               li:nth-child(3) {
+                    margin-left: 20px;
+               }
+
+               li:nth-child(4) {
                     margin-left: 15px;
                }
           }
@@ -100,10 +130,15 @@ header {
 }
 
 div.app-container {
-     // margin: 5px;
+     display: flex;
+     justify-content: center;
+     margin: 0 auto;
+     min-width: 900px;
+     max-width: 1000px;
 
      div.topic-container {
-          width: 225px;
+          width: 275px;
+          min-width: 250px;
           height: 75vh;
           margin-top: 40px;
           border-radius: 10px;
@@ -122,6 +157,80 @@ div.app-container {
                h2 {
                     text-align: center;
                     color: #fff;
+               }
+          }
+     }
+
+     div.dashboard {
+          margin: 40px 0 0 50px;
+          width: 100%;
+          min-width: 600px;
+          max-width: 650px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 50px;
+          row-gap: 50px;
+
+          div.dash-items {
+               border-radius: 10px;
+               -webkit-box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+               -moz-box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+               box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+               cursor: pointer;
+
+               &:hover {
+                    -webkit-box-shadow: 0px 5px 37px 2px rgba(143, 143, 143, 1);
+                    -moz-box-shadow: 0px 5px 37px 2px rgba(143, 143, 143, 1);
+                    box-shadow: 0px 5px 37px 2px rgba(143, 143, 143, 1);
+                    transition: box-shadow .2s linear;
+               }
+
+               div.heading {
+                    padding: 15px 0;
+
+                    h2 {
+                         text-align: center;
+                         letter-spacing: 2px;
+                         color: #6d6d6d;
+                    }
+               }
+
+               div.body {
+
+                    div.image1,
+                    div.image2, 
+                    div.image3, 
+                    div.image4 {
+                         position: relative;
+                         top: 20px;
+                         height: 130px;
+                         width: 100%;
+                    }
+                    
+                    div.image1 {
+                         background-image: url("./images/doc-feed-image.png");
+                         background-repeat: no-repeat;
+                         background-size: contain;
+                         background-position: center;
+                    }
+                    div.image2 {
+                         background-image: url("./images/create-post-image.png");
+                         background-repeat: no-repeat;
+                         background-size: contain;
+                         background-position: center;
+                    }
+                    div.image3 {
+                         background-image: url("./images/response-image.png");
+                         background-repeat: no-repeat;
+                         background-size: contain;
+                         background-position: center;
+                    }
+                    div.image4 {
+                         background-image: url("./images/faqs-image.png");
+                         background-repeat: no-repeat;
+                         background-size: contain;
+                         background-position: center;
+                    }
                }
           }
      }
@@ -318,12 +427,6 @@ div.app-container {
                     color: #5c5c5c;
                }
 
-          }
-     }
-
-     div.dashboard {
-          div.dash-items {
-               
           }
      }
 

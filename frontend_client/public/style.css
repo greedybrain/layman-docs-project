@@ -21,7 +21,9 @@ li {
 body {
   font-family: 'Raleway', sans-serif;
   background-color: #f4f4f4;
-  margin: 20px;
+  margin: 20px auto;
+  padding: 0 20px;
+  max-width: 1200px;
 }
 
 .success {
@@ -99,24 +101,67 @@ header {
   max-width: 1200px;
 }
 
-header div.login-signup-logout ul {
+header div.header-options ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-header div.login-signup-logout ul li {
+header div.header-options ul li {
   font-size: 1.2rem;
   letter-spacing: 2px;
   cursor: pointer;
+  color: #fff;
 }
 
-header div.login-signup-logout ul li:nth-child(2) {
+header div.header-options ul li:nth-child(1) {
+  height: 40px;
+  width: 400px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+}
+
+header div.header-options ul li:nth-child(1) input {
+  border: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 4px;
+  padding: 0 10px;
+  outline: none;
+}
+
+header div.header-options ul li:nth-child(2) {
   margin-left: 15px;
 }
 
+header div.header-options ul li:nth-child(3) {
+  margin-left: 20px;
+}
+
+header div.header-options ul li:nth-child(4) {
+  margin-left: 15px;
+}
+
+div.app-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  min-width: 900px;
+  max-width: 1000px;
+}
+
 div.app-container div.topic-container {
-  width: 225px;
+  width: 275px;
+  min-width: 250px;
   height: 75vh;
   margin-top: 40px;
   border-radius: 10px;
@@ -136,6 +181,84 @@ div.app-container div.topic-container .tc-heading {
 div.app-container div.topic-container .tc-heading h2 {
   text-align: center;
   color: #fff;
+}
+
+div.app-container div.dashboard {
+  margin: 40px 0 0 50px;
+  width: 100%;
+  min-width: 600px;
+  max-width: 650px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 50px;
+          column-gap: 50px;
+  row-gap: 50px;
+}
+
+div.app-container div.dashboard div.dash-items {
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+}
+
+div.app-container div.dashboard div.dash-items:hover {
+  -webkit-box-shadow: 0px 5px 37px 2px #8f8f8f;
+  box-shadow: 0px 5px 37px 2px #8f8f8f;
+  -webkit-transition: -webkit-box-shadow .2s linear;
+  transition: -webkit-box-shadow .2s linear;
+  transition: box-shadow .2s linear;
+  transition: box-shadow .2s linear, -webkit-box-shadow .2s linear;
+}
+
+div.app-container div.dashboard div.dash-items div.heading {
+  padding: 15px 0;
+}
+
+div.app-container div.dashboard div.dash-items div.heading h2 {
+  text-align: center;
+  letter-spacing: 2px;
+  color: #6d6d6d;
+}
+
+div.app-container div.dashboard div.dash-items div.body div.image1,
+div.app-container div.dashboard div.dash-items div.body div.image2,
+div.app-container div.dashboard div.dash-items div.body div.image3,
+div.app-container div.dashboard div.dash-items div.body div.image4 {
+  position: relative;
+  top: 20px;
+  height: 130px;
+  width: 100%;
+}
+
+div.app-container div.dashboard div.dash-items div.body div.image1 {
+  background-image: url("./images/doc-feed-image.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+div.app-container div.dashboard div.dash-items div.body div.image2 {
+  background-image: url("./images/create-post-image.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+div.app-container div.dashboard div.dash-items div.body div.image3 {
+  background-image: url("./images/response-image.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+div.app-container div.dashboard div.dash-items div.body div.image4 {
+  background-image: url("./images/faqs-image.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 div.app-container div.login-form {
