@@ -1,59 +1,88 @@
 class AppEventSessionReg {
+     constructor() {
+          this.currentHeader = document.querySelector("header")
+          this.signupFormDiv = SignupPage.renderSignupForm()
+          this.loginSpan = document.querySelector(".open-login")
+          this.loginFormDiv = LoginPage.renderLoginForm()
+          this.signupSpan = document.querySelector(".open-signup")
+          this.signupBtnHeader = document.querySelector(".signup")
+          this.loginBtnHeader = document.querySelector(".login")
+     }
 
      // LOGIN / SIGNUP 
-     static openSignup() {
-          const signupBtnInHeader = document.querySelector(".signup")
-          
-          document.addEventListener("click", e => { 
-               if (e.target === signupBtnInHeader) {
-                    const signupForm = SignupPage.renderSignupForm()
-                    signupForm.style.display = "flex"
-
-                    const loginSpan = document.querySelector(".open-login")
-                    
-                    signupForm.addEventListener('click', e => {
-                         if (e.target === loginSpan) {
-                              signupForm.style.display = "none"
-                              const loginForm = LoginPage.renderLoginForm()
-                              loginForm.style.display = "flex"
-                         }
-                    })
-               }
-
+     openSignup() {
+          this.signupBtnHeader.addEventListener('click', () => {
+               this.signupFormDiv.style.display = "flex"
+               
+               document.addEventListener('click', e => {
+                    if (e.target === this.loginSpan) {
+                         this.signupFormDiv.style.display = "none"
+                         this.loginFormDiv.style.display = "flex"
+                    } else {
+                         this.signupFormDiv.style.display = "flex"
+                         this.loginFormDiv.style.display = "none"
+                    }
+               })
+               this.signupFormSubmit(this.signupFormDiv.firstChild)
           })
      }
 
-     static openLogin() {
-          const loginBtnInHeader = document.querySelector(".login")
-
-          document.addEventListener("click", e => {
-               if (e.target === loginBtnInHeader) {
-                    const loginForm = LoginPage.renderLoginForm()
-                    loginForm.style.display = "flex"
-                    AppEventSessionReg.loginFormSubmit(loginForm.firstChild)
-
-                    const signupSpan = document.querySelector(".open-signup")
-
-                    loginForm.addEventListener('click', e => {
-                         if (e.target === signupSpan) {
-                              loginForm.style.display = "none"
-                              const signupForm = SignupPage.renderSignupForm()
-                              signupForm.style.display = "flex"
-                         }
-                    })
-               }
+     openLogin() {
+          this.loginBtnHeader.addEventListener("click", () => {
+               this.loginFormDiv.style.display = "flex"
+               
+               document.addEventListener('click', e => {
+                    if (e.target === this.signupSpan) {
+                         this.loginFormDiv.style.display = "none"
+                         this.signupFormDiv.style.display = "flex"
+                    } else {
+                         this.loginFormDiv.style.display = "flex"
+                         this.signupFormDiv.style.display = "none"
+                    }
+               })
+               this.loginFormSubmit(this.loginFormDiv.firstChild)
           })
      }
 
-     static loginFormSubmit(form) {
+     
+     loginFormSubmit(form) {
+          form.addEventListener("submit", e => {
+               e.preventDefault()
+               
+               const adapter = new SessionsAdapter()
+               adapter.createLaymanSession(e) // loggin in layman
+               form.reset() //clearing form fields
+               form.parentElement.remove() //removing form
+               this.currentHeader.remove()
+               Header.reRenderHeader()
+          })
+     }
+
+     signupFormSubmit(form) {
           form.addEventListener("submit", e => {
                e.preventDefault()
 
-               const adapter = new SessionsAdapter()
-               adapter.createLaymanSession() // loggin in layman
+               const adapter = new RegistrationsAdapter()
+               adapter.createLaymanRegistration(e) // loggin in layman
                form.reset() //clearing form fields
                form.parentElement.remove() //removing form
+               this.currentHeader.remove()
+               Header.reRenderHeader()
           })
      }
 
+
+     static listeningForLogoutEvent() {
+          const logoutBtnHeader = document.querySelector(".logout")
+          logoutBtnHeader.addEventListener("click", () => {
+               SessionsAdapter.destroyLaymanSession()
+               new this().currentHeader.remove()
+               Header.reRenderHeader()
+          })
+     }
+     
+     static listeningForLoginOrSignupEvents() {
+          const attachEventTo = new this
+          return attachEventTo.openLogin() || attachEventTo.openSignup()
+     }
 }

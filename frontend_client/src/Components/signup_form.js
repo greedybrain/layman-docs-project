@@ -76,26 +76,3 @@ SignupForm.prototype.buildSignupForm = function () {
      
      return this.form
 }
-
-// `
-// <div class="signup-form">
-//      <form id="signup-form">
-//           <h1>Signup</h1>
-//           <div class="name">
-//                <input type="text" name="name" class="name-field" placeholder="Name" required>
-//           </div>
-
-//           <div class="email">
-//                <input type="email" name="email" class="email-field" placeholder="Email" required>
-//           </div>
-//           <div class="email-error"></div>
-//           <div class="password">
-//                <input type="password" name="password" class="pw-field" placeholder="Password" required>
-//           </div>
-//           <div class="pw-error"></div>
-//           <button class="signup-btn" type="submit">Signup</button>
-//           <p>Already have an account? <span class="open-login">Login</span></p>
-//           <p class="signup-copyright-info">&copy 2020. LaymanDocs</p>
-//      </form>
-// </div>
-// `

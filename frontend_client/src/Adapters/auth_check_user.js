@@ -9,7 +9,7 @@ class AuthCheckUser {
      }
 
      static isloggedIn() {
-          return localStorage.token
+          return localStorage.token && localStorage.token !== "undefined"
      }
 
 }

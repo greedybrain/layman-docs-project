@@ -7,25 +7,24 @@ class RegistrationsAdapter {
           this.password = document.querySelector("input[name=password]")
      }
 
-     createLaymanRegistration() {
-          const configs = new Header()
+     createLaymanRegistration(e) {
           const options = {
                method: "POST",
-               headers: configs.defaultHeaders,
+               headers: Config.defaultHeaders(),
                body: JSON.stringify({
-                    name: e.target.full_name.value,
+                    name: e.target.name.value,
                     email: e.target.email.value,
                     password: e.target.password.value
                })
           }
 
-          fetch(adapter.signupPath, options)
+          fetch(this.signupPath, options)
                .then(res => res.json())
-               .then(data => {
-                    console.log(data)
-                    localStorage.setItem("laymanId", data.layman.data.id)
-                    localStorage.setItem("token", data.jwt)
-                    this.signupForm.reset()
+               .then(laymen => {
+                    localStorage.setItem("token", laymen.jwt)
+                    localStorage.setItem("laymanId", laymen.layman.data.id)
+                    localStorage.setItem("laymanEmail", laymen.layman.data.attributes.email)
+                    localStorage.setItem("laymanName", laymen.layman.data.attributes.name)
                })
      }
 }

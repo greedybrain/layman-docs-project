@@ -1,24 +1,24 @@
 class SessionsAdapter {
      constructor() {
-          this.loginPath = "http://localhost:3000/login"
+          this.loginPath = "http://localhost:3000/login/"
           this.logoutPath = "http://localhost:3000/logout/"
           this.loginForm = document.querySelector("#login-form")
           this.email = document.querySelector("input[name=email]")
           this.password = document.querySelector("input[name=password]")
+          this.logout = document.querySelector(".logout")
      }
 
      createLaymanSession(e) {
-          const configs = new Header()
           const data = {
-               email: this.email.value,
-               password: this.password.value
+               email: e.target.email.value,
+               password: e.target.password.value
           }
           const options = {
                method: "POST",
-               headers: configs.defaultHeaders,
+               headers: Config.defaultHeaders(),
                body: JSON.stringify(data)
           }
-          return fetch("http://localhost:3000/login", options)
+          fetch("http://localhost:3000/login", options)
                .then(res => res.json())
                .then(laymen => {
                     localStorage.setItem("token", laymen.jwt)
@@ -29,7 +29,7 @@ class SessionsAdapter {
                .catch(err => console.log(err.message))
      }
 
-     destroyLaymanSession() {
+     static destroyLaymanSession() {
           localStorage.clear()
      }
 

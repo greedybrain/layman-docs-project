@@ -1,9 +1,12 @@
 class App {
      static start() {
-          // LAYMAN EITHER LOGS IN OR SIGNS UP - STEP 1
-          AppEventSessionReg.openSignup()
-          AppEventSessionReg.openLogin()
-          //===========================================
+          Header.renderHeader()
+          if (AuthCheckUser.isloggedIn()) {
+               AppEventSessionReg.listeningForLogoutEvent()
+          } 
+          else {
+               AppEventSessionReg.listeningForLoginOrSignupEvents()
+          }
      }
 }
 
