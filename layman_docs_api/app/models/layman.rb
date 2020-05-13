@@ -6,4 +6,5 @@ class Layman < ApplicationRecord
           presence: true,
           uniqueness: true
 
+     has_many :posts, dependent: :destroy 
 end

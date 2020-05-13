@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  language_or_framework: MyString
+  udoc_url: MyString
+  section_of_concern: MyString
+
+two:
+  language_or_framework: MyString
+  udoc_url: MyString
+  section_of_concern: MyString
