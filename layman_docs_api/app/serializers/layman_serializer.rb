@@ -1,4 +1,4 @@
 class LaymanSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :email
+  attributes :name, :email, :posts
 end

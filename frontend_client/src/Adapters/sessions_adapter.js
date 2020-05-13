@@ -5,7 +5,6 @@ class SessionsAdapter {
           this.loginForm = document.querySelector("#login-form")
           this.email = document.querySelector("input[name=email]")
           this.password = document.querySelector("input[name=password]")
-          this.logout = document.querySelector(".logout")
      }
 
      createLaymanSession(e) {
