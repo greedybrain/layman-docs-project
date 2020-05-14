@@ -86,6 +86,49 @@
                </div>
           </div>
 
+          <div class="post-form-cont">
+               <form id="post-form">
+                    <div class="form-header">
+                         <h2>Create A Post</h2>
+                    </div>
+                    <div class="content-wrapper">
+                         <div class="icon-cont">
+                              <i class="fas fa-code"></i>
+                         </div>
+                         <div class="lang-frame-cont wrapper">
+                              <input type="text" class="lang-frame" name="lang_frame" placeholder="Language/ Framework">
+                         </div>
+                    </div>
+                    <div class="content-wrapper">
+                         <div class="icon-cont">
+                              <i class="fas fa-link"></i>
+                         </div>
+                         <div class="doc-url-cont wrapper">
+                              <input type="text" class="doc-url" name="doc_url" placeholder="URL Link">
+                         </div>
+                    </div>
+                    <div class="content-wrapper">
+                         <div class="icon-cont">
+                              <i class="fas fa-heading"></i>
+                         </div>
+                         <div class="doc-title-cont wrapper">
+                              <input type="text" class="doc-title" name="doc_title" placeholder="Document/ Section Title">
+                         </div>
+                    </div> 
+                    <div class="content-wrapper">
+                         <div class="icon-cont concern">
+                              <i class="fas fa-puzzle-piece"></i>
+                         </div> 
+                         <div class="section-of-concern-cont">
+                              <textarea class="section-of-concern" name="section_of_concern" cols="30" rows="10" placeholder="Paste Section of Concern"></textarea>
+                         </div>
+                    </div> 
+                    <div class="submit-btn">
+                         <button disabled="disabled">Create</button>
+                    </div>
+               </form>
+          </div>
+
      </div>
      
      <script src="./src/Components/header.js"></script>
@@ -98,7 +141,7 @@
      <script src="./src/Adapters/laymen_adapter.js"></script>
      <script src="./src/Adapters/posts_adapter.js"></script>
      <script src="./src/Events/app_event_session_reg.js"></script>
-     <script src="./src/Events/app_event_then_refresh.js"></script>
+     <script src="./src/Events/app_event_logo_click.js"></script>
      <script src="./src/app.js"></script>
 </body>
 </html>

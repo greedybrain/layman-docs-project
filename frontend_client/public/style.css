@@ -162,113 +162,6 @@ div.app-container {
   max-width: 1000px;
 }
 
-div.app-container div.topic-container {
-  width: 275px;
-  min-width: 250px;
-  height: 75vh;
-  margin-top: 40px;
-  overflow-y: scroll;
-  -webkit-box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
-  box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
-  position: relative;
-}
-
-div.app-container div.topic-container .tc-heading {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  padding: 15px 0;
-  background-image: -webkit-gradient(linear, left top, right top, from(#262b85), to(#20257a));
-  background-image: linear-gradient(to right, #262b85, #20257a);
-}
-
-div.app-container div.topic-container .tc-heading h2 {
-  text-align: center;
-  color: #fff;
-}
-
-div.app-container div.topic-container ul li {
-  text-align: center;
-  padding: 20px 0;
-}
-
-div.app-container div.dashboard {
-  margin: 40px 0 0 50px;
-  width: 100%;
-  min-width: 600px;
-  max-width: 650px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -webkit-column-gap: 50px;
-          column-gap: 50px;
-  row-gap: 50px;
-}
-
-div.app-container div.dashboard div.dash-items {
-  -webkit-box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
-  box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
-  cursor: pointer;
-}
-
-div.app-container div.dashboard div.dash-items:hover {
-  -webkit-box-shadow: 0px 5px 37px 2px #8f8f8f;
-  box-shadow: 0px 5px 37px 2px #8f8f8f;
-  -webkit-transition: -webkit-box-shadow .2s linear;
-  transition: -webkit-box-shadow .2s linear;
-  transition: box-shadow .2s linear;
-  transition: box-shadow .2s linear, -webkit-box-shadow .2s linear;
-}
-
-div.app-container div.dashboard div.dash-items div.heading {
-  padding: 15px 0;
-}
-
-div.app-container div.dashboard div.dash-items div.heading h2 {
-  text-align: center;
-  letter-spacing: 2px;
-  color: #6d6d6d;
-}
-
-div.app-container div.dashboard div.dash-items div.body div.image1,
-div.app-container div.dashboard div.dash-items div.body div.image2,
-div.app-container div.dashboard div.dash-items div.body div.image3,
-div.app-container div.dashboard div.dash-items div.body div.image4 {
-  position: relative;
-  top: 20px;
-  height: 130px;
-  width: 100%;
-}
-
-div.app-container div.dashboard div.dash-items div.body div.image1 {
-  background-image: url("./images/doc-feed-image.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
-div.app-container div.dashboard div.dash-items div.body div.image2 {
-  background-image: url("./images/create-post-image.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
-div.app-container div.dashboard div.dash-items div.body div.image3 {
-  background-image: url("./images/response-image.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
-div.app-container div.dashboard div.dash-items div.body div.image4 {
-  background-image: url("./images/faqs-image.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
 div.app-container div.login-form {
   position: absolute;
   top: 0;
@@ -468,5 +361,236 @@ div.app-container div.signup-form form p.signup-copyright-info {
   bottom: 0;
   margin: 0 0 20px 35px;
   color: #5c5c5c;
+}
+
+div.app-container div.topic-container {
+  width: 275px;
+  min-width: 250px;
+  height: 75vh;
+  margin-top: 40px;
+  overflow-y: scroll;
+  -webkit-box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+  position: relative;
+}
+
+div.app-container div.topic-container .tc-heading {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 15px 0;
+  background-image: -webkit-gradient(linear, left top, right top, from(#262b85), to(#20257a));
+  background-image: linear-gradient(to right, #262b85, #20257a);
+}
+
+div.app-container div.topic-container .tc-heading h2 {
+  text-align: center;
+  color: #fff;
+}
+
+div.app-container div.topic-container ul li {
+  text-align: center;
+  padding: 20px 0;
+}
+
+div.app-container div.dashboard {
+  margin: 40px 0 0 50px;
+  width: 100%;
+  min-width: 600px;
+  max-width: 650px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 50px;
+          column-gap: 50px;
+  row-gap: 50px;
+}
+
+div.app-container div.dashboard div.dash-items {
+  -webkit-box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 4px 19px -2px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+}
+
+div.app-container div.dashboard div.dash-items:hover {
+  -webkit-box-shadow: 0px 5px 37px 2px #8f8f8f;
+  box-shadow: 0px 5px 37px 2px #8f8f8f;
+  -webkit-transition: -webkit-box-shadow .2s linear;
+  transition: -webkit-box-shadow .2s linear;
+  transition: box-shadow .2s linear;
+  transition: box-shadow .2s linear, -webkit-box-shadow .2s linear;
+}
+
+div.app-container div.dashboard div.dash-items div.heading {
+  padding: 15px 0;
+}
+
+div.app-container div.dashboard div.dash-items div.heading h2 {
+  text-align: center;
+  letter-spacing: 2px;
+  color: #6d6d6d;
+}
+
+div.app-container div.dashboard div.dash-items div.body div.image1,
+div.app-container div.dashboard div.dash-items div.body div.image2,
+div.app-container div.dashboard div.dash-items div.body div.image3,
+div.app-container div.dashboard div.dash-items div.body div.image4 {
+  position: relative;
+  top: 20px;
+  height: 130px;
+  width: 100%;
+}
+
+div.app-container div.dashboard div.dash-items div.body div.image1 {
+  background-image: url("./images/doc-feed-image.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+div.app-container div.dashboard div.dash-items div.body div.image2 {
+  background-image: url("./images/create-post-image.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+div.app-container div.dashboard div.dash-items div.body div.image3 {
+  background-image: url("./images/response-image.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+div.app-container div.dashboard div.dash-items div.body div.image4 {
+  background-image: url("./images/faqs-image.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+div.app-container div.post-form-cont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  height: 100vh;
+  width: 50%;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #32323285;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+div.app-container div.post-form-cont #post-form {
+  width: 400px;
+  height: 650px;
+  background-color: #f4f4f4;
+}
+
+div.app-container div.post-form-cont #post-form .form-header {
+  text-align: center;
+  padding: 25px 0;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  color: #414141;
+}
+
+div.app-container div.post-form-cont #post-form .content-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 350px;
+  margin: 0 auto 20px auto;
+}
+
+div.app-container div.post-form-cont #post-form .content-wrapper .icon-cont {
+  font-size: 1.2rem;
+  margin-right: 5px;
+  color: #7d7d7d;
+}
+
+div.app-container div.post-form-cont #post-form .content-wrapper div.concern {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+div.app-container div.post-form-cont #post-form .content-wrapper .section-of-concern-cont {
+  text-align: center;
+  width: 300px;
+  margin: 0 auto 20px auto;
+  border: none;
+}
+
+div.app-container div.post-form-cont #post-form .content-wrapper .section-of-concern-cont textarea {
+  outline: none;
+  resize: none;
+  width: 100%;
+  height: 250px;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+}
+
+div.app-container div.post-form-cont #post-form .wrapper {
+  border-bottom: 1px solid #717171;
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+  height: 40px;
+}
+
+div.app-container div.post-form-cont #post-form .wrapper input {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+  border: none;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+div.app-container div.post-form-cont #post-form .wrapper input {
+  outline: none;
+}
+
+div.app-container div.post-form-cont #post-form .submit-btn {
+  width: 350px;
+  text-align: center;
+  border: 1px solid #333;
+  margin: 0 auto;
+  height: 45px;
+  -webkit-box-shadow: 0px 6px 11px -2px gray;
+  box-shadow: 0px 6px 11px -2px gray;
+}
+
+div.app-container div.post-form-cont #post-form .submit-btn button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-image: -webkit-gradient(linear, left top, right top, from(#262b85), to(#20257a));
+  background-image: linear-gradient(to right, #262b85, #20257a);
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+div.app-container div.post-form-cont #post-form .submit-btn button:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(#262b85), to(#3138b5));
+  background-image: linear-gradient(to right, #262b85, #3138b5);
+}
+
+div.app-container div.post-form-cont #post-form .submit-btn button:active {
+  background-color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
