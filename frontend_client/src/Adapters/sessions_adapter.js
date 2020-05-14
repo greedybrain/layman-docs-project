@@ -25,11 +25,13 @@ class SessionsAdapter {
                     localStorage.setItem("laymanEmail", laymen.layman.data.attributes.email)
                     localStorage.setItem("laymanName", laymen.layman.data.attributes.name)
                })
+               .then(App.refresh(300))
                .catch(err => console.log(err.message))
      }
 
      static destroyLaymanSession() {
           localStorage.clear()
+          App.refresh(300)
      }
 
 
