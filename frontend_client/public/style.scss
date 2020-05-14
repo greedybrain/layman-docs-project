@@ -83,6 +83,10 @@ header {
      min-width: 900px;
      max-width: 1200px;
 
+     .heading {
+          cursor: pointer;
+     }
+
      div.header-options {
           ul {
                display: flex;

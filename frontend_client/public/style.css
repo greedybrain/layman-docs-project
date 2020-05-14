@@ -101,6 +101,10 @@ header {
   max-width: 1200px;
 }
 
+header .heading {
+  cursor: pointer;
+}
+
 header div.header-options ul {
   display: -webkit-box;
   display: -ms-flexbox;
