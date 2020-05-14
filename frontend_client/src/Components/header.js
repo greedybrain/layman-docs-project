@@ -54,9 +54,9 @@ class Header {
           }
      }
 
-     static reRenderHeader() {
-          setTimeout(() => {
-               Header.renderHeader()
-          }, 500);
-     }
+     // static reRenderHeader() {
+     //      setTimeout(() => {
+     //           App.start()
+     //      }, 500);
+     // }
 }
