@@ -1,8 +1,10 @@
 class App {
      static start() {
+          // everything outside if block happens regardless
           Header.renderHeader()
-          AppEventSessionReg.goHome()
-          
+          AppEventThenRefresh.clickLogoToRefresh()
+
+          // state is decided by whether a layman is logged in or not in below if block 
           if (AuthCheckUser.isloggedIn()) {
                AppEventSessionReg.listeningForLogoutEvent()
           } 
@@ -11,8 +13,10 @@ class App {
           }
      }
 
-     static refresh() {
-          window.location.reload()
+     static refresh(time) {
+          setTimeout(() => {
+               window.location.reload()
+          }, time)
      }
 }
 

@@ -5,9 +5,8 @@ class PostsAdapter {
 
      indexPosts() {
           fetch(`${this.getAllPosts}`)
-               .then(res => res.json())
-               .then(postsInfo => {
-                    console.log(postsInfo)
+               .then(res => {
+                    return res.json()
                })
                .catch(err => console.log(err.message))
      }
