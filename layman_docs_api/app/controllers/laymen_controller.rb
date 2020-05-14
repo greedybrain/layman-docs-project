@@ -1,5 +1,5 @@
 class LaymenController < ApplicationController
-     before_action :require_login, except: [:index]
+     before_action :require_login, except: [:index, :show]
 
      def index 
           laymen = Layman.all.order("created_at DESC")
@@ -10,7 +10,9 @@ class LaymenController < ApplicationController
 
      def show 
           layman = Layman.find(params[:id])
-          render json: LaymanSerializer.new(layman).serializable_hash
+          render json: {
+               layman: LaymanSerializer.new(layman).serializable_hash
+          }
      end
 
 end
