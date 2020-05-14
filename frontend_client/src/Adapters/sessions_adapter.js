@@ -17,7 +17,7 @@ class SessionsAdapter {
                headers: Config.defaultHeaders(),
                body: JSON.stringify(data)
           }
-          fetch("http://localhost:3000/login", options)
+          fetch(`${this.loginPath}`, options)
                .then(res => res.json())
                .then(laymen => {
                     localStorage.setItem("token", laymen.jwt)
