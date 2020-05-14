@@ -8,42 +8,41 @@ class AppEventSessionReg {
           this.signupBtnHeader = document.querySelector(".signup")
           this.loginBtnHeader = document.querySelector(".login")
      }
+     
+     static goHome() {
+          document.addEventListener("click", e => {
+               if (e.target == document.querySelector(".heading") || e.target == document.querySelector(".heading h1")) {
+                    App.refresh()
+               }
+          })
+     }
 
      // LOGIN / SIGNUP 
-     openSignup() {
-          this.signupBtnHeader.addEventListener('click', () => {
-               this.signupFormDiv.style.display = "flex"
-               
-               document.addEventListener('click', e => {
-                    if (e.target === this.loginSpan) {
+     openSignupOrLogin() {
+          document.addEventListener('click', e => {
+               switch (e.target) {
+                    case this.signupBtnHeader:
+                         this.signupFormDiv.style.display = "flex"
+                         break
+                    case this.loginBtnHeader:
+                         this.loginFormDiv.style.display = "flex"
+                         break
+               }
+          })
+          document.addEventListener('click', e => {
+               switch (e.target) {
+                    case this.loginSpan:
                          this.signupFormDiv.style.display = "none"
                          this.loginFormDiv.style.display = "flex"
-                    } else {
+                         break
+                    case this.signupSpan:
                          this.signupFormDiv.style.display = "flex"
                          this.loginFormDiv.style.display = "none"
-                    }
-               })
-               this.signupFormSubmit(this.signupFormDiv.firstChild)
+                         break;
+               }
           })
+          this.signupFormSubmit(this.signupFormDiv.firstChild) || this.loginFormSubmit(this.loginFormDiv.firstChild)
      }
-
-     openLogin() {
-          this.loginBtnHeader.addEventListener("click", () => {
-               this.loginFormDiv.style.display = "flex"
-               
-               document.addEventListener('click', e => {
-                    if (e.target === this.signupSpan) {
-                         this.loginFormDiv.style.display = "none"
-                         this.signupFormDiv.style.display = "flex"
-                    } else {
-                         this.loginFormDiv.style.display = "flex"
-                         this.signupFormDiv.style.display = "none"
-                    }
-               })
-               this.loginFormSubmit(this.loginFormDiv.firstChild)
-          })
-     }
-
      
      loginFormSubmit(form) {
           form.addEventListener("submit", e => {
@@ -53,8 +52,9 @@ class AppEventSessionReg {
                adapter.createLaymanSession(e) // loggin in layman
                form.reset() //clearing form fields
                form.parentElement.remove() //removing form
-               this.currentHeader.remove()
-               Header.reRenderHeader()
+               setInterval(() => {
+                    App.refresh()
+               }, 300);
           })
      }
 
@@ -66,23 +66,25 @@ class AppEventSessionReg {
                adapter.createLaymanRegistration(e) // loggin in layman
                form.reset() //clearing form fields
                form.parentElement.remove() //removing form
-               this.currentHeader.remove()
-               Header.reRenderHeader()
+               setTimeout(() => {
+                    App.refresh()
+               }, 300);
           })
+          
      }
 
 
      static listeningForLogoutEvent() {
-          const logoutBtnHeader = document.querySelector(".logout")
-          logoutBtnHeader.addEventListener("click", () => {
+          document.addEventListener("click", () => {
                SessionsAdapter.destroyLaymanSession()
-               new this().currentHeader.remove()
-               Header.reRenderHeader()
+               setTimeout(() => {
+                    App.refresh()
+               }, 300);
           })
      }
      
      static listeningForLoginOrSignupEvents() {
           const attachEventTo = new this
-          return attachEventTo.openLogin() || attachEventTo.openSignup()
+          return attachEventTo.openSignupOrLogin()
      }
 }
