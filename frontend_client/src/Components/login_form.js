@@ -77,4 +77,9 @@ class LoginForm {
      
           return this.form
      }
+     
+     static renderLoginForm() {
+          const form = new LoginForm().buildLoginForm()
+          return form.parentElement
+     }
 }

@@ -75,4 +75,9 @@ class SignupForm {
           
           return this.form
      }
+
+     static renderSignupForm() {
+          const form = new SignupForm().buildSignupForm()
+          return form.parentElement
+     }
 }
