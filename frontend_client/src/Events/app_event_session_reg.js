@@ -1,20 +1,12 @@
 class AppEventSessionReg {
      constructor() {
-          this.currentHeader = document.querySelector("header")
-          this.signupFormDiv = SignupPage.renderSignupForm()
+          this.signupFormDiv = SignupForm.renderSignupForm()
           this.loginSpan = document.querySelector(".open-login")
-          this.loginFormDiv = LoginPage.renderLoginForm()
+          this.loginFormDiv = LoginForm.renderLoginForm()
           this.signupSpan = document.querySelector(".open-signup")
           this.signupBtnHeader = document.querySelector(".signup")
           this.loginBtnHeader = document.querySelector(".login")
-     }
-     
-     static goHome() {
-          document.addEventListener("click", e => {
-               if (e.target == document.querySelector(".heading") || e.target == document.querySelector(".heading h1")) {
-                    App.refresh()
-               }
-          })
+          this.logoutBtnHeader = document.querySelector(".logout")
      }
 
      // LOGIN / SIGNUP 
@@ -27,10 +19,6 @@ class AppEventSessionReg {
                     case this.loginBtnHeader:
                          this.loginFormDiv.style.display = "flex"
                          break
-               }
-          })
-          document.addEventListener('click', e => {
-               switch (e.target) {
                     case this.loginSpan:
                          this.signupFormDiv.style.display = "none"
                          this.loginFormDiv.style.display = "flex"
@@ -44,6 +32,7 @@ class AppEventSessionReg {
           this.signupFormSubmit(this.signupFormDiv.firstChild) || this.loginFormSubmit(this.loginFormDiv.firstChild)
      }
      
+     // handle login form submit event 
      loginFormSubmit(form) {
           form.addEventListener("submit", e => {
                e.preventDefault()
@@ -52,12 +41,10 @@ class AppEventSessionReg {
                adapter.createLaymanSession(e) // loggin in layman
                form.reset() //clearing form fields
                form.parentElement.remove() //removing form
-               setInterval(() => {
-                    App.refresh()
-               }, 300);
           })
      }
 
+     // handle signup form submit event 
      signupFormSubmit(form) {
           form.addEventListener("submit", e => {
                e.preventDefault()
@@ -66,25 +53,18 @@ class AppEventSessionReg {
                adapter.createLaymanRegistration(e) // loggin in layman
                form.reset() //clearing form fields
                form.parentElement.remove() //removing form
-               setTimeout(() => {
-                    App.refresh()
-               }, 300);
           })
           
      }
 
-
+     // handle logout event 
      static listeningForLogoutEvent() {
-          document.addEventListener("click", () => {
+          new this().logoutBtnHeader.addEventListener("click", () => {
                SessionsAdapter.destroyLaymanSession()
-               setTimeout(() => {
-                    App.refresh()
-               }, 300);
           })
      }
      
      static listeningForLoginOrSignupEvents() {
-          const attachEventTo = new this
-          return attachEventTo.openSignupOrLogin()
+          return new this().openSignupOrLogin()
      }
 }
