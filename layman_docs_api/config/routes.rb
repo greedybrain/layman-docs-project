@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :laymen, only: [:index, :show] do 
-    resources :posts, only: [:create, :destroy]
+    resources :posts, only: [:index, :create, :destroy]
   end
 
   resources :posts, only: [:index]

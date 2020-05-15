@@ -7,7 +7,7 @@ class Post < ApplicationRecord
      validates :doc_title, presence: true
      validates :section_of_concern, presence: true
 
-     belongs_to :layman, optional: true
+     belongs_to :layman
 
      def self.get_doc_content_by(url)
           info = {}
@@ -16,7 +16,7 @@ class Post < ApplicationRecord
           rescue SocketError
                invalid_message = "That link doesn't exist"
                raise invalid_message
-          rescue Errno::ENOENT
+          rescue (Errno::ENOENT)
                invalid_message = "Please recheck that link and try again"
                raise invalid_message
           ensure
@@ -36,17 +36,17 @@ class Post < ApplicationRecord
      end
      
      def self.validate_url_and_section_association(url, section_paste)
-          if self.get_doc_content_by(url)[:body]
-               result = self.get_doc_content_by(url)[:body]
-          else
-               result = self.get_doc_content_by(url)[:error]
-          end
+          result = self.get_doc_content_by(url)
           
           section_pasted = clean_up(section_paste.split(' '))
-          if result.include?(section_pasted)
-               section_pasted
-          else
-               "Invalid pasted section info"
+
+          if result[:body]
+               result = result[:body]
+               if result.include?(section_pasted)
+                    return "Documentation with that information was found!"
+               else
+                    return "You pasted invalid section information. Try again."
+               end
           end
      end
 

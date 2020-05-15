@@ -1,13 +1,23 @@
 class App {
      static start() {
-          // everything outside if block happens regardless
+          // ALL-ACCESS TO THIS IS NEEDED
           Header.renderHeader()
           AppEventLogoClick.clickLogoToRefresh()
-          // state is decided by whether a layman is logged in or not in below if block 
+
+          //FULL ACCESS
           if (AuthCheckUser.isloggedIn()) {
+               // POST HANDLING
+               AppEventPost.openCreatePostForm()
+               AppEventPost.authenticateUrl()
+               AppEventPost.authenticateSectionPasted()
+               AppEventPost.submitPost()
+
+               // END SESSION
                AppEventSessionReg.listeningForLogoutEvent()
           } 
+          //RESTRICTED ACCESS
           else {
+               // CURIOUS VISITOR 
                AppEventSessionReg.listeningForLoginOrSignupEvents()
           }
      }
@@ -21,9 +31,5 @@ class App {
 
 document.addEventListener("DOMContentLoaded", () => {
      App.start()
-     document.querySelector(".create-post").addEventListener("click", () => {
-          alert("clicked")
-     })
-     
 })
 

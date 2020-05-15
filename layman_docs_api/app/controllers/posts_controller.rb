@@ -2,7 +2,13 @@ class PostsController < ApplicationController
      before_action :require_login, except: [:index, :create, :get_doc_by_url, :url_and_section_association_check]
 
      def index 
-          posts = Post.all.order("language_or_framework")
+          if params[:layman_id]
+               layman = Layman.find(params[:layman_id])
+               posts = layman.posts.order("language_or_framework")
+          else
+               posts = Post.all.order("language_or_framework")
+          end
+
           render json: {
                posts: PostSerializer.new(posts).serializable_hash,
                message: "Index of all posts reached"
@@ -10,11 +16,13 @@ class PostsController < ApplicationController
      end
 
      def get_doc_by_url
-          Post.get_doc_content_by(params[:url])
+          doc = Post.get_doc_content_by(params[:doc_url])
+          render json: doc
      end
 
      def url_and_section_association_check
-          Post.validate_url_and_section_association(params[:doc_url], params[:section_of_concern])     
+          message = Post.validate_url_and_section_association(params[:doc_url], params[:section_of_concern])
+          render json: {message: message}
      end
 
      def create 
