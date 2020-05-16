@@ -555,6 +555,7 @@ div.app-container {
                          color: #fff;
                          letter-spacing: 2px;
                          cursor: pointer;
+                         outline: none;
 
                          &:hover {
                               background-image: linear-gradient(to right, #262b85, #3138b5);
