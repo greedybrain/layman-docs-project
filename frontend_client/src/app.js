@@ -1,5 +1,6 @@
 class App {
      static start() {
+          
           // ALL-ACCESS TO THIS IS NEEDED
           Header.renderHeader()
           AppEventLogoClick.clickLogoToRefresh()
@@ -8,9 +9,7 @@ class App {
           if (AuthCheckUser.isloggedIn()) {
                // POST HANDLING
                AppEventPost.openCreatePostForm()
-               AppEventPost.authenticateUrl()
-               AppEventPost.authenticateSectionPasted()
-               AppEventPost.submitPost()
+               AppEventPost.handlingPostCreation()
 
                // END SESSION
                AppEventSessionReg.listeningForLogoutEvent()
@@ -19,6 +18,7 @@ class App {
           else {
                // CURIOUS VISITOR 
                AppEventSessionReg.listeningForLoginOrSignupEvents()
+              
           }
      }
 
