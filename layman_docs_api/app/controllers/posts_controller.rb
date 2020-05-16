@@ -27,6 +27,7 @@ class PostsController < ApplicationController
 
      def create 
           if params[:layman_id]
+
                layman = Layman.find(params[:layman_id])
                post = layman.posts.build(post_params)
                if post.save 
@@ -45,7 +46,7 @@ class PostsController < ApplicationController
      private 
 
      def post_params
-          params.permit(:language_or_framework, :doc_url, :doc_title, :section_of_concern)
+          params.permit(:language_or_framework, :doc_url, :doc_title, :section_of_concern, :layman_id)
      end
 
 end

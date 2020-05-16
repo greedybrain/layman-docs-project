@@ -3,7 +3,10 @@ class PostsAdapter {
           this.getAllPostsPath = "http://localhost:3000/posts/"
           this.validateUrlDocPath = "http://localhost:3000/doc_fetch"
           this.validateSOCPaste = "http://localhost:3000/validating"
-          this.submitPostPath = `http://localhost:3000/laymen/${AuthCheckUser.currentUser.laymanId}/posts`
+          this.langFrame = document.querySelector("input[name=lang_frame]")
+          this.docUrl = document.querySelector("input[name=doc_url]")
+          this.docTitle = document.querySelector("input[name=doc_title]")
+          this.secOfConcern = document.querySelector("textarea[name=section_of_concern]")
      }
 
      indexPosts() {
@@ -14,7 +17,7 @@ class PostsAdapter {
                .catch(err => console.log(err.message))
      }
 
-     authUrl(e) {
+     async authUrl(e) {
           const data = {
                doc_url: e.target.value
           }
@@ -23,12 +26,16 @@ class PostsAdapter {
                headers: Config.defaultHeaders(),
                body: JSON.stringify(data)
           }
-          return fetch(this.validateUrlDocPath, options)
-               .then(res => res.json())
-               .catch(err => console.log(err.message))
+          try {
+               const res = await fetch(this.validateUrlDocPath, options)
+               return await res.json()
+          }
+          catch (err) {
+               return console.log(err.message)
+          }
      }
 
-     authSectionPaste(url, e) {
+     async authSectionPaste(url, e) {
           const data = {
                doc_url: url,
                section_of_concern: e.target.value
@@ -38,26 +45,29 @@ class PostsAdapter {
                headers: Config.defaultHeaders(),
                body: JSON.stringify(data)
           }
-          return fetch(this.validateSOCPaste, options)
-               .then(res => res.json())
-               .catch(err => console.log(err.message))
+          try {
+               const res = await fetch(this.validateSOCPaste, options)
+               return await res.json()
+          }
+          catch (err) {
+               return console.log(err.message)
+          }
      }
 
-     finalizeAndSubmitPost(e, url, docHead, soc) {
+     async finalizeAndSubmitPost() {
           const data = {
-               language_or_framework: e.target.value,
-               doc_url: url,
-               doc_title: docHead,
-               section_of_concern: soc
+               language_or_framework: this.langFrame.value,
+               doc_url: this.docUrl.value,
+               doc_title: this.docTitle.value,
+               section_of_concern: this.secOfConcern.value
           }
           const options = {
                method: "POST",
                headers: Config.defaultHeaders(),
                body: JSON.stringify(data)
           }
-          fetch(this.submitPostPath, options)
+          return fetch(`http://localhost:3000/laymen/${AuthCheckUser.currentUser().laymanId}/posts`, options)
                .then(res => res.json())
-               .then(data => console.log(data))
-          
+               .catch(err => console.log(err.message))
      }
 }

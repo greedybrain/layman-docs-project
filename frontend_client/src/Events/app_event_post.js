@@ -60,7 +60,8 @@ class AppEventPost {
                                         socPaste.classList.remove("animate__animated", "animate__shakeX")
                                         socPaste.style.color = "#333"
                                         socPaste.value = ""
-                                   }, 5000);
+                                   }, 3000);
+                                   
                               }
                          })
                }, 0);
@@ -68,22 +69,31 @@ class AppEventPost {
      }
 
      static submitPost() {
-          // const langFrame = document.querySelector("input[name=lang_frame]")
-          const docUrl = document.querySelector("input[name=doc_url]")
-          const docTitle = document.querySelector("input[name=doc_title]")
-          const socPaste = document.querySelector("textarea[name=section_of_concern]")
-
-          new this().postFormCont.firstChild.addEventListener("submit", e => {
+          const form = new this().postFormCont.firstElementChild
+          form.addEventListener("submit", e => {
                e.preventDefault()
-
-               new PostsAdapter()
-                    .finalizeAndSubmitPost(
-                         e,
-                         docUrl.value,
-                         docTitle.value,
-                         socPaste.value
+               
+               new PostsAdapter().
+                    finalizeAndSubmitPost()
+                    .then(data => {
+                              console.log(data)
+                    })
+                    .then(
+                         form.reset(),
+                         form.parentElement.classList.add(
+                              "animate__animated",
+                              "animate__slideOutLeft",
+                              "animate__faster"
+                         ),
+                         App.refresh(100)
                     )
           })
+     }
+
+     static handlingPostCreation() {
+          this.authenticateUrl()
+          this.authenticateSectionPasted()
+          this.submitPost()
      }
 
 }
