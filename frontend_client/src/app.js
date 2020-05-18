@@ -4,12 +4,14 @@ class App {
           // ALL-ACCESS TO THIS IS NEEDED
           Header.renderHeader()
           AppEventLogoClick.clickLogoToRefresh()
+          Topic.fillTopicCont()
 
           //FULL ACCESS
           if (AuthCheckUser.isloggedIn()) {
                // POST HANDLING
                AppEventPost.openCreatePostForm()
                AppEventPost.handlingPostCreation()
+               Topic.fillTopicCont()
 
                // END SESSION
                AppEventSessionReg.listeningForLogoutEvent()

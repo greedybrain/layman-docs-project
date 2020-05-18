@@ -1,5 +1,6 @@
 class PostsAdapter {
      constructor() {
+          this.baseUrl = "http://localhost:3000/laymen/"
           this.getAllPostsPath = "http://localhost:3000/posts/"
           this.validateUrlDocPath = "http://localhost:3000/doc_fetch"
           this.validateSOCPaste = "http://localhost:3000/validating"
@@ -10,11 +11,14 @@ class PostsAdapter {
      }
 
      indexPosts() {
-          fetch(`${this.getAllPostsPath}`)
-               .then(res => {
-                    return res.json()
-               })
+          return fetch(this.getAllPostsPath)
+               .then(res => res.json())
                .catch(err => console.log(err.message))
+     }
+
+     laymensPosts() {
+          return fetch(`${this.baseUrl}${AuthCheckUser.currentUser().laymanId}/posts`)
+               .then(res => res.json())
      }
 
      async authUrl(e) {

@@ -391,6 +391,12 @@ div.app-container div.topic-container .tc-heading h2 {
 div.app-container div.topic-container ul li {
   text-align: center;
   padding: 20px 0;
+  cursor: pointer;
+  color: #0055d5;
+}
+
+div.app-container div.topic-container ul li:not(:last-child) {
+  border-bottom: 1px solid #e3e3e3;
 }
 
 div.app-container div.dashboard {

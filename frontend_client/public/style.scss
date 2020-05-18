@@ -364,10 +364,12 @@ div.app-container {
                li {
                     text-align: center;
                     padding: 20px 0;
+                    cursor: pointer;
+                    color: #0055d5;
                }
 
                li:not(:last-child) {
-                    // borederw
+                    border-bottom: 1px solid #e3e3e3;
                }
           }
      }
