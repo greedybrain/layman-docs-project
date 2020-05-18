@@ -18,7 +18,15 @@ class AppEventPost {
      }
 
      static closePostForm() {
-
+          const close = new this().closeBtn
+          close.addEventListener("click", () => {
+               close.parentElement.classList.add(
+                    "animate__animated",
+                    "animate__slideOutLeft",
+                    "animate__fast"
+               )
+               App.refresh(500)
+          })
      }
 
      static authenticateUrl() {

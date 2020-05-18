@@ -11,6 +11,7 @@ class App {
                // POST HANDLING
                AppEventPost.openCreatePostForm()
                AppEventPost.handlingPostCreation()
+               AppEventPost.closePostForm()
                Topic.fillTopicCont()
 
                // END SESSION
