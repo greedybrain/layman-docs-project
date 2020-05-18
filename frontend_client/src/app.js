@@ -3,6 +3,7 @@ class App {
           
           // ALL-ACCESS TO THIS IS NEEDED
           Header.renderHeader()
+          AppEventPost.openSearch()
           AppEventLogoClick.clickLogoToRefresh()
           Topic.fillTopicCont()
 
@@ -10,8 +11,10 @@ class App {
           if (AuthCheckUser.isloggedIn()) {
                // POST HANDLING
                AppEventPost.openCreatePostForm()
-               AppEventPost.handlingPostCreation()
                AppEventPost.closePostForm()
+               AppEventPost.authenticateUrl()
+               AppEventPost.authenticateSectionPasted()
+               AppEventPost.submitPost()
                Topic.fillTopicCont()
 
                // END SESSION

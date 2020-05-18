@@ -120,6 +120,11 @@ header div.header-options ul li {
   color: #fff;
 }
 
+header div.header-options ul li.search {
+  display: none;
+  width: 200px;
+}
+
 header div.header-options ul li:nth-child(1) {
   height: 40px;
   width: 400px;
@@ -449,7 +454,7 @@ div.app-container div.dashboard div.dash-items div.body div.image4 {
 }
 
 div.app-container div.dashboard div.dash-items div.body div.image1 {
-  background-image: url("./images/doc-feed-image.png");
+  background-image: url("./images/my-posts-image.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

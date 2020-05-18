@@ -98,6 +98,11 @@ header {
                     color: #fff;
                }
 
+               li.search {
+                    display: none;
+                    width: 200px;
+               }
+
                li:nth-child(1) {
                     height: 40px;
                     width: 400px;
@@ -128,7 +133,6 @@ header {
                li:nth-child(4) {
                     margin-left: 15px;
                }
-
           }
      }
 }
@@ -421,7 +425,7 @@ div.app-container {
                     }
 
                     div.image1 {
-                         background-image: url("./images/doc-feed-image.png");
+                         background-image: url("./images/my-posts-image.png");
                          background-repeat: no-repeat;
                          background-size: contain;
                          background-position: center;

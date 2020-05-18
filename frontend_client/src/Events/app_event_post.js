@@ -5,6 +5,14 @@ class AppEventPost {
           this.closeBtn = document.querySelector(".close")
      }
 
+     static openSearch() {
+          const searchIcon = document.querySelector(".search-icon")
+          const searchBar = document.querySelector("li.search")
+          searchIcon.addEventListener("click", () => {
+               searchBar.style.display = "block"
+          })
+     }
+
      static openCreatePostForm() {
           new this().createPosttBtnShow.addEventListener("click", () => {
                const formCont = new this().postFormCont
@@ -82,14 +90,15 @@ class AppEventPost {
      }
 
      static submitPost() {
-          const form = new this().postFormCont.firstElementChild
+          const form = new this().postFormCont.children[1]
           form.addEventListener("submit", e => {
                e.preventDefault()
                
                new PostsAdapter().
                     finalizeAndSubmitPost()
                     .then(data => {
-                              console.log(data)
+                         debugger
+                         console.log(data)
                     })
                     .then(
                          form.reset(),
@@ -98,15 +107,10 @@ class AppEventPost {
                               "animate__slideOutLeft",
                               "animate__faster"
                          ),
-                         App.refresh(100)
+                         App.refresh(500)
                     )
+                    
           })
-     }
-
-     static handlingPostCreation() {
-          this.authenticateUrl()
-          this.authenticateSectionPasted()
-          this.submitPost()
      }
 
 }

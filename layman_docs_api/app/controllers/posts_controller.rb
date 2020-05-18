@@ -10,8 +10,8 @@ class PostsController < ApplicationController
           end
 
           render json: {
+               message: "Index of all posts reached",
                posts: PostSerializer.new(posts).serializable_hash,
-               message: "Index of all posts reached"
           }, status: :ok
      end
 
