@@ -2,6 +2,7 @@ class AppEventPost {
      constructor() {
           this.createPosttBtnShow = document.querySelector(".create-post")
           this.postFormCont = document.querySelector(".post-form-cont")
+          this.closeBtn = document.querySelector(".close")
      }
 
      static openCreatePostForm() {
@@ -14,6 +15,10 @@ class AppEventPost {
                     "animate__fast"
                )
           })
+     }
+
+     static closePostForm() {
+
      }
 
      static authenticateUrl() {

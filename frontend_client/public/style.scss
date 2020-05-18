@@ -466,6 +466,19 @@ div.app-container {
           border-top-right-radius: 20px;
           border-bottom-right-radius: 20px;
 
+          div.close {
+               position: absolute;
+               top: 0;
+               right: 0;
+               margin: 30px 30px 0 0;
+               cursor: pointer;
+
+               i {
+                    color: #fff;
+                    font-size: 2rem;
+               }
+          }
+
           #post-form {
                width: 400px;
                height: 650px;
