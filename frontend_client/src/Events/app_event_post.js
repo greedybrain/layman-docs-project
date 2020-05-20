@@ -122,7 +122,7 @@ class AppEventPost {
                               "animate__slideOutLeft",
                               "animate__faster"
                          ),
-                         // App.refresh(500)
+                         App.refresh(500)
                     )
                     
           })
