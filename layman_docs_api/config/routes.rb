@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   post "/doc_fetch", to: "posts#get_doc_by_url"
   post "/validating", to: "posts#url_and_section_association_check"
 
-  # root "laymen#index"
+  root "laymen#index"
 end

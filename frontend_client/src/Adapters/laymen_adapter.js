@@ -1,6 +1,6 @@
 class LaymenAdapter {
      constructor() {
-          this.laymenBasePath = "http://localhost:3000/laymen/"
+          this.laymenBasePath = "https://layman-docs.herokuapp.com/laymen/"
      }
 
      static getLaymenIndexPage() {

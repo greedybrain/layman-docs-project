@@ -1,9 +1,9 @@
 class PostsAdapter {
      constructor() {
-          this.baseUrl = "http://localhost:3000/laymen/"
-          this.getAllPostsPath = "http://localhost:3000/posts/"
-          this.validateUrlDocPath = "http://localhost:3000/doc_fetch"
-          this.validateSOCPaste = "http://localhost:3000/validating"
+          this.baseUrl = "https://layman-docs.herokuapp.com/laymen/"
+          this.getAllPostsPath = "https://layman-docs.herokuapp.com/posts/"
+          this.validateUrlDocPath = "https://layman-docs.herokuapp.com/doc_fetch"
+          this.validateSOCPaste = "https://layman-docs.herokuapp.com/validating"
           this.langFrameWork = document.querySelector("input[name=lang_frame]")
           this.docUrl = document.querySelector("input[name=doc_url]")
           this.docTitle = document.querySelector("input[name=doc_title]")

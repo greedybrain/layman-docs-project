@@ -1,6 +1,6 @@
 class RegistrationsAdapter {
      constructor() {
-          this.signupPath = "http://localhost:3000/signup"
+          this.signupPath = "https://layman-docs.herokuapp.com/signup"
           this.signupForm = document.querySelector("#signup-form")
           this.name = document.querySelector("input[name=full_name]")
           this.email = document.querySelector("input[name=email]")
