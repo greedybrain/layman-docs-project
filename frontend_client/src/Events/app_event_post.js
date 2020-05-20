@@ -13,7 +13,8 @@ class AppEventPost {
           })
      }
 
-     static openCreatePostForm() {
+     static openCloseCreatePostForm() {
+          const close = new this().closeBtn
           new this().createPosttBtnShow.addEventListener("click", () => {
                const formCont = new this().postFormCont
                formCont.style.display = "flex"
@@ -23,17 +24,35 @@ class AppEventPost {
                     "animate__fast"
                )
           })
-     }
-
-     static closePostForm() {
-          const close = new this().closeBtn
           close.addEventListener("click", () => {
                close.parentElement.classList.add(
                     "animate__animated",
                     "animate__slideOutLeft",
                     "animate__fast"
                )
-               App.refresh(500)
+               // App.refresh(1000)
+          })
+     }
+
+     static openCloseLaymensPosts() {
+          const myPostBtn = document.querySelector(".feed")
+          const laymanPostCont = document.querySelector("div.laymens-post-cont")
+          const close = document.querySelector("div.laymens-post-cont .close")
+          myPostBtn.addEventListener("click", () => {
+               laymanPostCont.style.display = "block"
+               laymanPostCont.classList.add(
+                    "animate__animated",
+                    "animate__slideInRight",
+                    "animate__fast"
+               )
+          })
+          close.addEventListener("click", () => {
+               close.parentElement.classList.add(
+                    "animate__animated",
+                    "animate__slideOutRight",
+                    "animate__fast"
+               )
+               App.refresh(1000)
           })
      }
 
@@ -96,10 +115,6 @@ class AppEventPost {
                
                new PostsAdapter().
                     finalizeAndSubmitPost()
-                    .then(data => {
-                         debugger
-                         console.log(data)
-                    })
                     .then(
                          form.reset(),
                          form.parentElement.classList.add(

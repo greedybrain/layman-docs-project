@@ -10,12 +10,13 @@ class App {
           //FULL ACCESS
           if (AuthCheckUser.isloggedIn()) {
                // POST HANDLING
-               AppEventPost.openCreatePostForm()
-               AppEventPost.closePostForm()
+               AppEventPost.openCloseCreatePostForm()
                AppEventPost.authenticateUrl()
                AppEventPost.authenticateSectionPasted()
                AppEventPost.submitPost()
                Topic.fillTopicCont()
+               MyPosts.buildLaymensPost()
+               AppEventPost.openCloseLaymensPosts()
 
                // END SESSION
                AppEventSessionReg.listeningForLogoutEvent()

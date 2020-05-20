@@ -4,9 +4,9 @@ class PostsController < ApplicationController
      def index 
           if params[:layman_id]
                layman = Layman.find(params[:layman_id])
-               posts = layman.posts.order("language_or_framework")
+               posts = layman.posts.order("created_at DESC")
           else
-               posts = Post.all.order("language_or_framework")
+               posts = Post.all.order("created_at DESC")
           end
 
           render json: {

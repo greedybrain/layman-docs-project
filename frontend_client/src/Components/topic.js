@@ -18,7 +18,7 @@ class Topic {
 
      renderTopic(post) {
           let topic = new Topic().topicItem
-          topic.title = post.attributes.language_or_framework
+          topic.title = post.attributes.language_or_framework.slice(0, 1).toUpperCase() + post.attributes.language_or_framework.slice(1)
           if (topic.title.length > 10) {
                topic.textContent = `${topic.title.slice(0, 10)} ...`
           } else {
