@@ -30,8 +30,8 @@ class AppEventPost {
                     "animate__slideOutLeft",
                     "animate__fast"
                )
-               App.refresh(500)
           })
+          App.refresh(500)
      }
 
      static openCloseLaymensPosts() {
