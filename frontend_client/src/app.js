@@ -10,10 +10,10 @@ class App {
           //FULL ACCESS
           if (AuthCheckUser.isloggedIn()) {
                // POST HANDLING
-               AppEventPost.openCloseCreatePostForm()
                AppEventPost.authenticateUrl()
                AppEventPost.authenticateSectionPasted()
                AppEventPost.submitPost()
+               AppEventPost.openCloseCreatePostForm()
                Topic.fillTopicCont()
                MyPosts.buildLaymensPost()
                AppEventPost.openCloseLaymensPosts()
