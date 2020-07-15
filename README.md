@@ -26,7 +26,7 @@ This application is an attempt to make reading or parsing through different type
 
 ***Backend/API***
 
-1. git clone git@github.com:greedybrain/Gomojii.git
+1. ```git clone git@github.com:greedybrain/layman-docs-project.git```
 2. cd into projects backend directory gomojii-backend
 3. Run bundle install to install all of Gomojii's dependencies
 4. Confirm that Postgres is installed on your machine. If not, get it here
