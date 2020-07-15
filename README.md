@@ -34,3 +34,8 @@ This application is an attempt to make reading or parsing through different type
 6. Create migrations by running ```rails db:migrate```
 7. If applicable, run ```rails db:seed``` to generate any seed data
 8. Lastly, run ```rails s``` or ```rails server``` to generate a live server
+
+***Frontend/Client***
+
+1. ```cd``` into front end directory ```frontend_client```
+2. Run open ```index.html``` or ```npm start``` to run the app in a browser
